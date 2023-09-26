@@ -1,66 +1,25 @@
-2023-09-22 16:45:51.784 INFO  Processando proposta undefined (Processo 1 de 49) 
-2023-09-22 16:45:51.827 INFO  Processando proposta undefined (Processo 1 de 49) 
-2023-09-22 16:45:51.829 INFO  Processando proposta undefined (Processo 1 de 1) 
-2023-09-22 16:45:52.219 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNCCBUNIFV15 
-2023-09-22 16:45:52.222 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNCCBUNIFV15 
-2023-09-22 16:45:52.232 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNCCBUNIFV15 
-2023-09-22 16:45:52.510 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNCCBUNIFV14 
-2023-09-22 16:45:52.544 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNCCBUNIFV14 
-2023-09-22 16:45:52.571 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNCCBUNIFV13 
-2023-09-22 16:45:52.835 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNCCBUNIFV13 
-2023-09-22 16:45:52.861 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNCCBUNIFV13 
-2023-09-22 16:45:52.918 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNCCBCSGPCONV3 
-2023-09-22 16:45:53.158 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNCCBCSGPCONV3 
-2023-09-22 16:45:53.190 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNCCBCSGPCONV3 
-2023-09-22 16:45:53.246 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNCCBCSGPCON 
-2023-09-22 16:45:53.470 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNCCBCSGPCON 
-2023-09-22 16:45:53.491 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNCCBCSGPCON 
-2023-09-22 16:45:53.561 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNCCBUNIFV13 
-2023-09-22 16:45:53.561 ERROR generateDocuments :: ReferenceError: clientId is not defined 
-2023-09-22 16:45:53.561 ERROR generateDocuments :: {} 
-2023-09-22 16:45:53.561 INFO  Processando proposta undefined (Processo 2 de 49) 
-2023-09-22 16:45:53.746 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNCCBUNIFV13 
-2023-09-22 16:45:53.746 ERROR generateDocuments :: ReferenceError: clientId is not defined 
-2023-09-22 16:45:53.746 ERROR generateDocuments :: {} 
-2023-09-22 16:45:53.746 INFO  Processando proposta undefined (Processo 2 de 49) 
-2023-09-22 16:45:53.801 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNCCBUNIFV13 
-2023-09-22 16:45:53.801 ERROR generateDocuments :: ReferenceError: clientId is not defined 
-2023-09-22 16:45:53.801 ERROR generateDocuments :: {} 
-2023-09-22 16:45:53.859 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNCCBUNIFV15 
-2023-09-22 16:45:54.056 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNTRPV2 
-2023-09-22 16:45:54.190 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNCCBUNIFV14 
-2023-09-22 16:45:54.457 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNCCBUNIFV15 
-2023-09-22 16:45:54.498 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNCCBUNIFV13 
-2023-09-22 16:45:54.803 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNCCBUNIFV13 
-2023-09-22 16:45:54.851 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNCCBCSGPCONV3 
-2023-09-22 16:45:55.210 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNCCBCSGPCON 
-2023-09-22 16:45:55.296 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNCCBCSGPCONV3 
-2023-09-22 16:45:55.535 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNCCBUNIFV13 
-2023-09-22 16:45:55.535 ERROR generateDocuments :: ReferenceError: clientId is not defined 
-2023-09-22 16:45:55.535 ERROR generateDocuments :: {} 
-2023-09-22 16:45:55.535 INFO  Processando proposta undefined (Processo 3 de 49) 
-2023-09-22 16:45:55.588 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNCCBCSGPCON 
-2023-09-22 16:45:56.001 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNCCBUNIFV15 
-2023-09-22 16:45:56.075 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNCCBUNIFV13 
-2023-09-22 16:45:56.075 ERROR generateDocuments :: ReferenceError: clientId is not defined 
-2023-09-22 16:45:56.075 ERROR generateDocuments :: {} 
-2023-09-22 16:45:56.075 INFO  Processando proposta undefined (Processo 3 de 49) 
-2023-09-22 16:45:56.403 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNCCBUNIFV14 
-2023-09-22 16:45:56.452 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNTRPV2 
-2023-09-22 16:45:56.771 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNCCBUNIFV13 
-2023-09-22 16:45:56.802 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNCCBUNIFV15 
-2023-09-22 16:45:57.090 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNCCBCSGPCONV3 
-2023-09-22 16:45:57.128 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNCCBUNIFV13 
-2023-09-22 16:45:57.404 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNCCBCSGPCON 
-2023-09-22 16:45:57.499 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNCCBCSGPCONV3 
-2023-09-22 16:45:57.700 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNCCBUNIFV13 
-2023-09-22 16:45:57.700 ERROR generateDocuments :: ReferenceError: clientId is not defined 
-2023-09-22 16:45:57.700 ERROR generateDocuments :: {} 
-2023-09-22 16:45:57.700 INFO  Processando proposta undefined (Processo 4 de 49) 
-2023-09-22 16:45:57.818 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNCCBCSGPCON 
-2023-09-22 16:45:58.056 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNCCBUNIFV15 
-2023-09-22 16:45:58.153 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNCCBUNIFV13 
-2023-09-22 16:45:58.153 ERROR generateDocuments :: ReferenceError: clientId is not defined 
-2023-09-22 16:45:58.153 ERROR generateDocuments :: {} 
-2023-09-22 16:45:58.153 INFO  Processando proposta undefined (Processo 4 de 49) 
-2023-09-22 16:45:58.371 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta undefined e documento BGNCCBUNIFV14 
+2023-09-26 14:14:44.413 INFO  Processando proposta 842785851 (Processo 1 de 2) 
+2023-09-26 14:14:44.459 INFO  Processando proposta 842867435 (Processo 1 de 2) 
+2023-09-26 14:14:44.677 INFO  proposalData response.data:: da proposta 842785851 == [] 
+2023-09-26 14:14:44.677 INFO  dadosProposta linha 137 842785851 :: [] 
+2023-09-26 14:14:44.677 INFO  Propostqa  842785851 não encontrada 
+2023-09-26 14:14:45.073 INFO  proposalData response.data:: da proposta 842867435 == [{"cpf":"28353692449","propostaId":"842867435","sessionId":"e5c7379e-bb70-48ce-8df8-d092fb6fbe8e","clientId":"14641011","createdAt":"2020-06-10T18:50:22Z","status":"DERIVED","statusMesa":"APROVADO"},{"cpf":"28353692449","propostaId":"842867435","sessionId":"8dc32be0-4eec-46c4-8566-9e902fb8c71e","clientId":"14641011","createdAt":"2020-06-05T08:04:43Z","status":"EXPIRED","statusMesa":null}] 
+2023-09-26 14:14:45.073 INFO  dadosProposta linha 137 842867435 :: [{"cpf":"28353692449","propostaId":"842867435","sessionId":"e5c7379e-bb70-48ce-8df8-d092fb6fbe8e","clientId":"14641011","createdAt":"2020-06-10T18:50:22Z","status":"DERIVED","statusMesa":"APROVADO"},{"cpf":"28353692449","propostaId":"842867435","sessionId":"8dc32be0-4eec-46c4-8566-9e902fb8c71e","clientId":"14641011","createdAt":"2020-06-05T08:04:43Z","status":"EXPIRED","statusMesa":null}] 
+2023-09-26 14:14:45.073 INFO   Linha 85 : {"cpf":"28353692449","propostaId":"842867435","sessionId":"e5c7379e-bb70-48ce-8df8-d092fb6fbe8e","clientId":"14641011","createdAt":"2020-06-10T18:50:22Z","status":"DERIVED","statusMesa":"APROVADO"} 
+2023-09-26 14:14:45.073 INFO  Executando _getDocumentsBySubscription com dados :: proposalId: 842867435 e product: REFINANCIAMENTO 
+2023-09-26 14:14:45.491 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta 842867435 e documento BGNCCBUNIFV15 
+2023-09-26 14:14:45.491 ERROR Erro na API::  AxiosError: Request failed with status code 403  
+2023-09-26 14:14:45.938 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta 842867435 e documento BGNCCBUNIFV14 
+2023-09-26 14:14:45.938 ERROR Erro na API::  AxiosError: Request failed with status code 403  
+2023-09-26 14:14:46.465 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta 842867435 e documento BGNCCBUNIFV13 
+2023-09-26 14:14:46.465 ERROR Erro na API::  AxiosError: Request failed with status code 403  
+2023-09-26 14:14:46.788 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta 842867435 e documento BGNCCBCSGPCONV3 
+2023-09-26 14:14:46.788 ERROR Erro na API::  AxiosError: Request failed with status code 403  
+2023-09-26 14:14:47.334 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta 842867435 e documento BGNCCBCSGPCON 
+2023-09-26 14:14:47.334 ERROR Erro na API::  AxiosError: Request failed with status code 403  
+2023-09-26 14:14:47.672 ERROR _getDocumentBySubscription :: Contrato não encontrado para proposta 842867435 e documento BGNCCBUNIFV13 
+2023-09-26 14:14:47.672 ERROR Erro na API::  AxiosError: Request failed with status code 403  
+2023-09-26 14:14:47.672 INFO  Processando proposta 842772753 (Processo 2 de 2) 
+2023-09-26 14:14:47.788 INFO  proposalData response.data:: da proposta 842772753 == [] 
+2023-09-26 14:14:47.788 INFO  dadosProposta linha 137 842772753 :: [] 
+2023-09-26 14:14:47.788 INFO  Propostqa  842772753 não encontrada 

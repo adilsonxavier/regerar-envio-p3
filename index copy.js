@@ -8,7 +8,6 @@ import pdfToBase64 from 'pdf-to-base64';
 import logger from 'simple-node-logger';
 
 import { contractsConfig } from './config.js';
-import { isError } from 'util';
 
 async function main() {
     let _logger = null;
@@ -61,108 +60,80 @@ async function main() {
             _proposalsData.length / 2
         );
 
+/////////// Adilson ///////////
+        // _logger.info("proposalDataChunk 64::" + JSON.stringify(proposalDataChunk));
+    
+        // try {
+        //     let dadosProposta = await _getProposalById("842867435")
+        //     _logger.info(`dadosProposta linha 75 :: ${JSON.stringify(dadosProposta)}`);
+       
+        //     if(!dadosProposta)
+        //     {
+        //         //logar
+        //         return
+        //     }
+         
+        //     // retorno: Sempre filtrar os status: APPROVED ou DERIVED e statusMesa: APROVADO
+        // // Se houver os dois: filtrar pelo mais novo
+        //     dadosProposta = dadosProposta.filter(item => (item.status ==="DERIVED" || item.status === "APPROVED") 
+        //     && item.statusMesa === "APROVADO")
+
+        //     dadosProposta = dadosProposta.sort(
+        //         (objA, objB) => Number(new Date(objA.createdAt)) - Number(new Date(objB.createdAt)),
+        //     );
+
+        //     _logger.info(" Linha 85 : " + JSON.stringify(dadosProposta[0]))
+
+        //     /////////////
+        //     const documents = await _getDocumentsBySubscription(
+        //         "842867435",
+        //         "REFINANCIAMENTO"
+        //     );
+        //     _logger.info(" documents : " + JSON.stringify(documents))
+       
+       
+       
+        // } catch (error) {
+        //     _logger.error(`_getProposalById erro :: ${error}`);
+        //     _logger.error(`_getProposalById erro :: ${JSON.stringify(error)}`);
+        // }
+///////
+
+
         await Promise.all(
             proposalDataChunk.map((proposalArray) =>
                 generateDocuments(proposalArray)
             )
         );
+/////////// Adilson fim///////////        
     }
+
     /////////// Adilson ///////////
-    async function _getProposalById(proposal) {
-        const response = await axios.post(
-            'https://motor.cetelem.com.br/api/Script/Run',
-            {
-                ScriptName: 'consulta-cetelem\\public\\proposal\\get-proposal-on-identify-by-id',
-                ScriptParameters: {
-                    proposal,
-                },
-                Token: '59f9083e-6077-4bf6-a5a3-9cd2fbbdbc94',
+        async function _getProposalById(proposal) {
+            const response = await axios.post(
+                'https://motor.cetelem.com.br/api/Script/Run',
+                {
+                    ScriptName: 'consulta-cetelem\\public\\proposal\\get-proposal-on-identify-by-id',
+                    ScriptParameters: {
+                        proposal,
+                    },
+                    Token: '59f9083e-6077-4bf6-a5a3-9cd2fbbdbc94',
+                }
+            );
+    
+            if (!response || response.error) {
+                throw new Error(
+                    `Resposta do método _getProposalById inválido: [${JSON.stringify(
+                        response
+                    )}]`
+                );
             }
-        );
-
-        if (!response || response.error) {
-            throw new Error(
-                `Resposta do método _getProposalById inválido: [${JSON.stringify(
-                    response
-                )}]`
-            );
+            _logger.info("proposalData response.data:: da proposta "+ proposal+ " == " + JSON.stringify(response.data))
+    
+            return response.data;
         }
-        _logger.info("proposalData response.data:: da proposta "+ proposal+ " == " + JSON.stringify(response.data))
+    /////////// Adilson fim///////////
 
-        return response.data;
-    }
-/////////// Adilson fim///////////
-async function generateDocuments(proposalDataArray) {
-    let index = 1;
-
-    for (let {
-        proposalId,
-        product,
-        contract,
-        // uuid,
-    } of proposalDataArray) {
-        proposalId = JSON.stringify(Object.values(proposalDataArray[index-1])[0]).replace(/"/g, "");
-        _logger.info(
-            `Processando proposta ${proposalId} (Processo ${index} de ${proposalDataArray.length})`
-        );
-
-        try {
-            let dadosProposta = await _getProposalById(proposalId)
-            _logger.info(`dadosProposta linha 137 ${proposalId} :: ${JSON.stringify(dadosProposta)}`);
-
-            if (dadosProposta.length === 0 ) {
-                _logger.info(`Propostqa  ${proposalId} não encontrada`);
-                return
-            }
-
-
-        // retorno: Sempre filtrar os status: APPROVED ou DERIVED e statusMesa: APROVADO
-        // Se houver os dois: filtrar pelo mais novo
-        dadosProposta = dadosProposta.filter(item => (item.status ==="DERIVED" || item.status === "APPROVED") 
-        && item.statusMesa === "APROVADO")
-
-        dadosProposta = dadosProposta.sort(
-            (objA, objB) => Number(new Date(objA.createdAt)) - Number(new Date(objB.createdAt)),
-        );
-
-        _logger.info(" Linha 85 : " + JSON.stringify(dadosProposta[0]))
-
-           //****** TESTANDO AGORA  ******/
-            const documents = await _getDocumentsBySubscription(
-                proposalId,
-                product
-            );
-
-            /*
-            const docPDF = _buildDocPDFdata(
-                proposalId,
-                clientId,
-                documents
-            );
-
-            const signedDocumentsUrl = await _getSignedDocumentsUrlRequest(
-                sessionId,
-                clientId,
-                docPDF
-            );
-            */
-
-            // const signedDocumentsUrl =
-            //     await _getSignedDocumentsUrlRequestMotorNovo(uuid);
-
-            // todo: descomentar quando tiver ok
-            // await _transformDocumentAndSendToP3(
-            //     signedDocumentsUrl,
-            //     contract
-            // );
-        } catch (error) {
-            _logger.error(`generateDocuments :: ${error}`);
-            _logger.error(`generateDocuments :: ${JSON.stringify(error)}`);
-        }
-
-        index++;
-    }
-}
     function createLogger() {
         return logger.createSimpleLogger({
             logFilePath: `./logs/${_csvDocName}.log`,
@@ -187,10 +158,134 @@ async function generateDocuments(proposalDataArray) {
         });
     }
 
+    async function  generateDocuments(proposalDataArray) {
+        _logger.info(`proposalDataArray 162 :: ${JSON.stringify(proposalDataArray)}`);
+        let index = 1;
 
+        for (let {
+            proposalId,
+            product,
+            contract,
+            // uuid,
+        } of proposalDataArray) {
+            proposalId = JSON.stringify(Object.values(proposalDataArray[index-1])[0]).replace(/"/g, "");
+            _logger.info(
+                `Processando proposta ${proposalId} (Processo ${index} de ${proposalDataArray.length})`
+            );
+
+
+
+            try {
+
+                let dadosProposta = await _getProposalById(proposalId)
+                _logger.info(`dadosProposta linha 137 ${proposalId} :: ${JSON.stringify(dadosProposta)}`);
+
+                if (dadosProposta.length === 0 ) {
+                    _logger.info(`Propostqa  ${proposalId} não encontrada`);
+                    return
+                }
+
+                      // retorno: Sempre filtrar os status: APPROVED ou DERIVED e statusMesa: APROVADO
+        // Se houver os dois: filtrar pelo mais novo
+            dadosProposta = dadosProposta.filter(item => (item.status ==="DERIVED" || item.status === "APPROVED") 
+            && item.statusMesa === "APROVADO")
+
+            dadosProposta = dadosProposta.sort(
+                (objA, objB) => Number(new Date(objA.createdAt)) - Number(new Date(objB.createdAt)),
+            );
+
+            _logger.info(" Linha 85 : " + JSON.stringify(dadosProposta[0]))
+
+                // todo: criar uma função que execute essa chamada
+                // -> se basear no método abaixo: _getSignedDocumentsUrlRequest()            
+                // {
+                //     "Token": "{{ _.motor.token }}",
+                //     "ScriptName": "consulta-cetelem\\public\\proposal\\get-proposal-on-identify-by-id",
+                //     "ScriptParameters": {
+                //         "proposal": "842785851" -> variável = proposalId
+                //     }
+                // }
+                // 
+                // retorno: Sempre filtrar os status: APPROVED ou DERIVED e statusMesa: APROVADO
+                // Se houver os dois: filtrar pelo mais novo
+                // {
+                // 	"result": [
+                // 		{
+                // 			"cpf": "28353692449",
+                // 			"propostaId": "842866177",
+                // 			"sessionId": "8dc32be0-4eec-46c4-8566-9e902fb8c71e",
+                // 			"clientId": "14641011",
+                // 			"createdAt": "2020-06-05T08:04:43Z",
+                // 			"status": "EXPIRED",
+                // 			"statusMesa": null
+                // 		},
+                // 		{
+                // 			"cpf": "28353692449",
+                // 			"propostaId": "842866177",
+                // 			"sessionId": "e5c7379e-bb70-48ce-8df8-d092fb6fbe8e",
+                // 			"clientId": "14641011",
+                // 			"createdAt": "2020-06-10T18:50:22Z",
+                // 			"status": "DERIVED",
+                // 			"statusMesa": "APROVADO"
+                // 		},
+                //      {
+                // 			"cpf": "28353692449",
+                // 			"propostaId": "842866177",
+                // 			"sessionId": "e5c7379e-bb70-48ce-8df8-d092fb6fbe8e",
+                // 			"clientId": "14641011",
+                // 			"createdAt": "2020-06-10T18:50:22Z",
+                // 			"status": "DERIVED",
+                // 			"statusMesa": "REPROVADO"
+                // 		},
+                //      {
+                // 			"cpf": "28353692449",
+                // 			"propostaId": "842866177",
+                // 			"sessionId": "e5c7379e-bb70-48ce-8df8-d092fb6fbe8e",
+                // 			"clientId": "14641011",
+                // 			"createdAt": "2020-06-10T18:50:22Z",
+                // 			"status": "APPROVED",
+                // 			"statusMesa": "null"
+                // 		}
+                // 	]
+                // }
+
+            //////// Adilson //
+            _logger.info(" product 252  : " + JSON.stringify(product))
+                const documents = await _getDocumentsBySubscription(
+                    proposalId,
+                    product
+                );
+
+                // const docPDF = _buildDocPDFdata(
+                //     proposalId,
+                //     clientId,
+                //     documents
+                // );
+
+                // const signedDocumentsUrl = await _getSignedDocumentsUrlRequest(
+                //     sessionId,
+                //     clientId,
+                //     docPDF
+                // );
+               //////// Adilson fim//
+                // const signedDocumentsUrl =
+                //     await _getSignedDocumentsUrlRequestMotorNovo(uuid);
+
+                // todo: descomentar quando tiver ok
+                // await _transformDocumentAndSendToP3(
+                //     signedDocumentsUrl,
+                //     contract
+                // );
+            } catch (error) {
+                _logger.error(`generateDocuments :: ${error}`);
+                _logger.error(`generateDocuments :: ${JSON.stringify(error)}`);
+            }
+
+            index++;
+        }
+    }
 
     async function _getDocumentsBySubscription(proposalId, product) {
-        _logger.info(`Executando _getDocumentsBySubscription com dados :: proposalId: ${proposalId} e product: ${product}` )
         const documents = [];
         const documentsName = _documentsName[product];
 
@@ -213,10 +308,7 @@ async function generateDocuments(proposalDataArray) {
                 );
             } catch (error) {
                 _logger.error(
-                    `_getDocumentBySubscription :: Contrato não encontrado para proposta ${proposalId} e documento ${documentName}`
-                );
-                _logger.error(
-                    `Erro na API::  ${error} `
+                    `_getDocumentBySubscription :: Contrato não encontrado para proposta ${proposalId} e documento ${documentName} - Erro ${error}`
                 );
             }
         }
@@ -228,6 +320,8 @@ async function generateDocuments(proposalDataArray) {
         subscriptionId,
         documentName
     ) {
+        _logger.info("url::  " + `https://api.cetelem.com.br/payroll-loans/v1/subscriptions/${subscriptionId}/${documentName}/document` )
+        
         const response = await axios.get(
             `https://api.cetelem.com.br/payroll-loans/v1/subscriptions/${subscriptionId}/${documentName}/document`,
             {
@@ -289,6 +383,7 @@ async function generateDocuments(proposalDataArray) {
 
         return signedDocumentsUrl;
     }
+
 
     async function _getSignedDocumentsUrlRequest(sessionId, clientId, docPDF) {
         const response = await axios.post(
