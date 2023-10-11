@@ -29,10 +29,20 @@ csv-parser@^3.0.0:
   dependencies:
     minimist "^1.2.0"
 
+deeks@3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/deeks/-/deeks-3.0.1.tgz#f54123f6ddfe8f7a22480fb3c9d2e6ac4a6d9494"
+  integrity sha512-rBAWIXSKXvGQOdG5GLGaGMfOCHvvHln2fFJ2UW8cvJouoAhOiNiLGHLYYcyqpeNQ93vPBeRuzv1bAr8bvceakw==
+
 delayed-stream@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
   integrity sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ==
+
+doc-path@4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/doc-path/-/doc-path-4.0.1.tgz#4f1f745a79d665da3fdcfeac0232680a7f0dc231"
+  integrity sha512-3EpO6FV6R1f4dimmTBhDCqqWZFZGTLGoagojNONcH3fWabtCh+SwSlzk2xNeajzaPvDAOxUUN6euh0JajTQ4Zg==
 
 follow-redirects@^1.14.9:
   version "1.15.1"
@@ -52,6 +62,14 @@ get-stream@^6.0.1:
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/get-stream/-/get-stream-6.0.1.tgz#a262d8eef67aced57c2852ad6167526a43cbf7b7"
   integrity sha512-ts6Wi+2j3jQjqi70w5AlN8DFnkSwC+MqmxEzdEALB2qXZYV3X/b1CTfgPLGJNMeAWxdPfU8FO1ms3NUfaHCPYg==
+
+json-2-csv@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/json-2-csv/-/json-2-csv-4.1.0.tgz#d56f39fa95999e36f87f41c2225b6b68e19747c5"
+  integrity sha512-O/8UMNeXOuQ3ztsuMpkr7ybE+GEL3KVwOX5qdXBt44Qabt3UdNCIuUMGPNMQ6LPxZZZHfw5UxjMclxZ4IU2lTQ==
+  dependencies:
+    deeks "3.0.1"
+    doc-path "4.0.1"
 
 lodash@^4.17.12, lodash@^4.17.21:
   version "4.17.21"
